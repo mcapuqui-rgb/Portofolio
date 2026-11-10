@@ -2,7 +2,11 @@
 
 function initMenu() {
   const btn = $("menu-btn"), nav = $("nav");
-  const setMenu = (open) => { nav.hidden = !open; btn.setAttribute("aria-expanded", String(open)); };
+  const setMenu = (open) => {
+    nav.hidden = !open;
+    document.body.classList.toggle("menu-open", open);
+    btn.setAttribute("aria-expanded", String(open));
+  };
   btn.addEventListener("click", () => setMenu(nav.hidden));
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });

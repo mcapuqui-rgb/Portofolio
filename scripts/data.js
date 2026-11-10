@@ -9,7 +9,9 @@ const PROFILE = {
   email: "mcapuqui@gmail.com",
   github: "https://github.com/mcapuqui-rgb",
   linkedin: "https://www.linkedin.com/in/mendes-capuqui-584b80385",
-  whatsapp: "https://wa.me/922849769", // ex.: "https://wa.me/351912345678". Vazio = o botão não aparece
+  whatsapp: "https://wa.me/244942942347",
+  phone: "tel:+244942942347",
+  phone2: "tel:+244958578860",
   cv: ""       // ex.: "assets/cv/cv.pdf". Vazio = o botão não aparece
 };
 

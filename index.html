@@ -6,6 +6,16 @@
   <title>Portfólio</title>
   <meta name="description" content="Mendes Capuqui, desenvolvedor web full-stack. Portfólio de projetos.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>
+    let theme;
+    try {
+      theme = localStorage.getItem("theme");
+    } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
@@ -18,7 +28,9 @@
 <body>
   <header>
     <div class="wrap">
-      <button id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <button id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
       <a class="brand" href="#inicio">Portfólio</a>
       <button id="theme" type="button" role="switch" aria-checked="false" aria-label="Tema escuro"></button>
     </div>

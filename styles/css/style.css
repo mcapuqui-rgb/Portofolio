@@ -1,0 +1,81 @@
+/* Paleta: cinzas neutros + azul-aço. Para mudar o destaque, edita --accent e --accent-ink. */
+:root{--bg:#f5f6f7;--surface:#fff;--ink:#15181b;--muted:#5e6c6d;--line:#d7dbdf;--accent:#3f4773;--accent-ink:#fff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1113;--surface:#171a1d;--ink:#e6e8ea;--muted:#9aa3aa;--line:#2a2f34;--accent:#8fb0c4;--accent-ink:#0f1113;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0f1113;--surface:#171a1d;--ink:#e6e8ea;--muted:#9aa3aa;--line:#2a2f34;--accent:#009cfd;--accent-ink:#0f1113;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+[hidden]{display:none!important}
+
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:.9rem}
+.brand{font-weight:800;font-size:1.25rem;text-decoration:none;color:var(--ink)}
+#menu-btn{justify-self:start;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:.35rem .7rem;font:inherit;font-size:.9rem;cursor:pointer}
+#theme{justify-self:end;width:3.2rem;height:1.7rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer;position:relative;padding:0}
+#theme::after{content:"";position:absolute;top:.2rem;left:.2rem;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--accent);transition:transform .2s}
+#theme[aria-checked=true]::after{transform:translateX(1.5rem)}
+#nav{border-top:1px solid var(--line);background:var(--bg)}
+#nav ul{list-style:none;margin:0 auto;padding:.5rem 1.25rem;max-width:68rem;display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+#nav a{display:block;padding:.5rem 0;color:var(--ink);text-decoration:none;font-weight:600}
+#nav a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:0 0 .75rem}
+.role{font-size:1.3rem;font-weight:600;color:var(--accent);margin:0 0 1rem}
+.intro{color:var(--muted);max-width:34rem;margin:0 0 1.75rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.6rem 1.2rem;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--accent);background:none;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn:hover{opacity:.85}
+.avatar{justify-self:center;width:min(19rem,70vw);aspect-ratio:1;border-radius:50%;border:6px solid var(--accent);display:grid;place-items:center;overflow:hidden;background:var(--surface);font-size:4.5rem;font-weight:800;color:var(--accent)}
+.avatar img{width:100%;height:100%;}
+
+/* Secções */
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin:0 0 2rem}
+h3{font-size:1.25rem;margin:0 0 1.25rem}
+#sobre p{max-width:42rem;color:var(--muted);margin:0}
+
+.skills{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;padding:0;margin:0}
+.skills li{background:var(--surface);border:1px solid var(--line);border-bottom:3px solid var(--accent);border-radius:6px;padding:.6rem 1.1rem;font-weight:600}
+
+.skill-group+.skill-group{margin-top:1.75rem}
+.skill-title{font-size:1rem;color:var(--muted);font-weight:600;margin:0 0 .75rem}
+.group+.group{margin-top:3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.5rem}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:var(--surface);border:1px solid var(--line);border-bottom:3px solid var(--accent);border-radius:6px;overflow:hidden;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cover{aspect-ratio:16/9;background:linear-gradient(135deg,var(--line),var(--surface));background-size:cover;background-position:center;display:grid;place-items:center;font-size:2.2rem;font-weight:800;color:var(--accent)}
+.card .body{padding:1rem 1.1rem 1.2rem}
+.card h4{margin:0 0 .25rem;font-size:1.15rem}
+.card p{margin:0 0 .75rem;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:0}
+.tags li{border:1px solid var(--line);border-radius:4px;padding:0 .5rem;font-size:.8rem;color:var(--muted);background:var(--bg)}
+
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem;list-style:none;padding:0;margin:0}
+.contacts li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1rem 1.2rem}
+.contacts strong{display:block}
+.contacts a{word-break:break-all}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+/* Janela do projeto */
+dialog{width:min(40rem,92vw);max-height:88vh;overflow:auto;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:1.5rem}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h3{font-size:1.6rem;margin:0 2.5rem .25rem 0}
+dialog h4{margin:1.25rem 0 .4rem}
+dialog p,dialog li{color:var(--muted)}
+dialog ul.list{padding-left:1.2rem;margin:0}
+#close{position:absolute;top:.8rem;right:.8rem;background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:.25rem .7rem;font:inherit;cursor:pointer}
+.date{color:var(--accent);font-weight:600;margin:0 0 1rem}
+.m-summary{margin-top:1rem}
+.m-links{margin-top:1.5rem}
+
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:3rem 0 2.5rem;gap:2rem}.avatar{order:-1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

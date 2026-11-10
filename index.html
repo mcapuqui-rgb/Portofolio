@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio</title>
+  <meta name="description" content="Mendes Capuqui, desenvolvedor web full-stack. Portfólio de projetos.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/css/style.css">
+  <script defer src="scripts/utils.js"></script>
+  <script defer src="scripts/data.js"></script>
+  <script defer src="scripts/renderData.js"></script>
+  <script defer src="scripts/index.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <button id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <a class="brand" href="#inicio">Portfólio</a>
+      <button id="theme" type="button" role="switch" aria-checked="false" aria-label="Tema escuro"></button>
+    </div>
+    <nav id="nav" aria-label="Principal" hidden>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap" id="inicio">
+    <div class="hero">
+      <div>
+        <h1 id="name"></h1>
+        <p class="role" id="title"></p>
+        <p class="intro" id="intro"></p>
+        <div class="actions" id="hero-actions"></div>
+      </div>
+      <div class="avatar" id="avatar" aria-hidden="true"></div>
+    </div>
+
+    <section id="sobre"><h2>Sobre mim</h2><p id="about"></p></section>
+    <section id="habilidades"><h2>Habilidades</h2><div id="skills"></div></section>
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="group" id="g-featured" hidden><h3>Destaques</h3><div class="cards" id="featured"></div></div>
+      <div class="group" id="g-all" hidden><h3>Todos os projetos</h3><div class="cards" id="all"></div></div>
+    </section>
+    <section id="contacto"><h2>Contacto</h2><ul class="contacts" id="contacts"></ul></section>
+  </main>
+  <footer><div class="wrap" id="footer"></div></footer>
+
+  <dialog id="modal" aria-labelledby="m-title">
+    <button id="close" type="button">Fechar</button>
+    <h3 id="m-title"></h3>
+    <p class="date" id="m-date" hidden></p>
+    <ul class="tags" id="m-stack"></ul>
+    <p id="m-summary" class="m-summary"></p>
+    <p id="m-note" hidden><em></em></p>
+    <div id="m-dec" hidden><h4>Decisões técnicas</h4><ul class="list" id="m-dec-list"></ul></div>
+    <div id="m-lim" hidden><h4>Limitações</h4><p id="m-lim-text"></p></div>
+    <div class="actions m-links" id="m-links"></div>
+  </dialog>
+</body>
+</html>
